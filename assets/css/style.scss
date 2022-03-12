@@ -1,0 +1,39 @@
+body{
+	background-color:#E5E5E5;
+	width:0 auto;
+	
+
+}
+.container{
+	max-width:0 auto;
+    border:1px solid green;
+    position: relative;
+}
+//TITRE
+
+h1, h2{
+	text-align: center;
+}
+// ALPHABET
+
+.alpha{
+	display: flex;
+	justify-content: center;
+		#myList{
+			display: flex;
+			align-items:center;
+			justify-content:center;
+			
+		    flex-wrap: wrap;
+		    gap:5px;
+		    width:35%;
+		    // max-width: 405px;
+		    border:1px solid red;
+		button{
+			background-color: black;
+			padding: 10px;
+			text-transform: uppercase;
+			color:white;
+			border:none;
+			width: auto;
+}}}
