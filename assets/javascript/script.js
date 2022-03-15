@@ -27,21 +27,25 @@ function init(){
 let lives=5
 }
 init();
-
-
 //----------------------------------------//
+
+
 
 //AFFICHER LE MOT RANDOM-------------------
 let FindWord=document.getElementById("find-word");
-// FindWord.innerHTML=" _ ".repeat(randomWord.length);
+
+// FindWord.innerHTML="_".repeat(randomWord.length);
 let hiddenWord = ""
 for(let i = 0; i < randomWord.length; i++){
-  hiddenWord += ' _ '
+  hiddenWord += '_'
 FindWord.innerHTML = hiddenWord;
 }
 
+
 //--------------------------------------------
-//AFFICHER ALPHABET CLIQUABLE
+
+
+//AFFICHER ALPHABET CLIQUABLE-------------------------
 let alphabet = ['a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n',
 'o','p','q','r','s','t','u','v','w','x','y','z'];
 let list = document.getElementById("myList");
@@ -67,18 +71,17 @@ let buttons = document.querySelectorAll(".alphaBtn");
 function displayLetter(){
 buttons.forEach( button => {
 button.addEventListener('click', () => {
-	const myLetter=(button.textContent);
-	if (randomWord.includes(myLetter)){
-          // guessWord.innerHTML=myLetter; 
-          FindWord.innerHTML=myLetter.replace(randomWord);
-          console.log(randomWord, myLetter); 
-    	} else{
-    		console.log("Wrong, you loss a live");
-    	}
-    // 
-   
- 
-  
+	 const myletter=(button.textContent);
+    if (randomWord.includes(myletter)){
+          index = randomWord.indexOf(myletter);
+          currentWord=FindWord.innerHTML;
+          currentWord[index]=myletter;
+           
+          FindWord.innerHTML=currentWord;
+          console.log(currentWord);
+        } else{
+            console.log("Wrong, you loss a live");
+        } 
   });
 });
 };
