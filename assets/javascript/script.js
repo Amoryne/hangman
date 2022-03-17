@@ -35,13 +35,13 @@ init();
 let FindWord=document.getElementById("find-word");
 
 // FindWord.innerHTML="_".repeat(randomWord.length);
-let hiddenWord = ""
+let hiddenWord = [];
 for(let i = 0; i < randomWord.length; i++){
-  hiddenWord += '_'
+  hiddenWord[i]= '_';
 FindWord.innerHTML = hiddenWord;
 }
 
-
+let remainingLetters=randomWord.length;
 //--------------------------------------------
 
 
@@ -72,16 +72,24 @@ function displayLetter(){
 buttons.forEach( button => {
 button.addEventListener('click', () => {
 	 const myletter=(button.textContent);
-    if (randomWord.includes(myletter)){
-          index = randomWord.indexOf(myletter);
-          currentWord=FindWord.innerHTML;
-          currentWord[index]=myletter;
-           
-          FindWord.innerHTML=currentWord;
-          console.log(currentWord);
-        } else{
-            console.log("Wrong, you loss a live");
-        } 
+    // if (randomWord.includes(myletter)){
+    //       index = randomWord.indexOf(myletter);
+    //       currentWord=FindWord.innerHTML;
+    //       currentWord[index]=myletter;
+    //       FindWord.innerHTML=currentWord;
+    //       console.log(currentWord, randomWord);
+    //     } else{
+    //         console.log("Wrong, you loss a live");
+    //     } 
+    for(var j=0; j< randomWord.length; j++){
+if (randomWord[j] === myletter);{
+  hiddenWord[j] = randomWord[j];
+  FindWord.innerHTML=(hiddenWord.join(myletter +''));
+}
+}
+console.log(hiddenWord, randomWord);
+
+
   });
 });
 };
