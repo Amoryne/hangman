@@ -1,36 +1,67 @@
 body {
   background-color: #E5E5E5;
-  width: 0 auto; }
+  width: 0 auto;
+}
 
 .container {
   max-width: 0 auto;
   border: 1px solid green;
-  position: relative; }
+  position: relative;
+}
 
 h1, h2 {
-  text-align: center; }
+  text-align: center;
+}
 
 .alpha {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center; }
-  .alpha #myList {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    width: 35%;
-    border: 1px solid red; }
-    .alpha #myList button {
-      background-color: black;
-      padding: 10px;
-      text-transform: uppercase;
-      color: white;
-      border: none;
-      width: auto; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.alpha #myList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 5px;
+  width: 35%;
+  border: 1px solid red;
+}
+
+.alpha #myList button {
+  background-color: black;
+  padding: 10px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  width: auto;
+}
 
 #find-word {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  font-weight: 900;
+  color: blue;
+  letter-spacing: 10px;
+}
 
+.hiddenword {
+  color: red;
+}
 /*# sourceMappingURL=style.css.map */
