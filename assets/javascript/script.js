@@ -50,8 +50,9 @@ let indiceDOM=document.getElementById("indice")
 // console.log(wordIndex);
 console.log(arrayWord)
 
-let error=0;
-let maxError=5;
+var error=0;
+
+var maxError = 5;
 let good=0;
 
 //---------------------------------------------------------------------------//
@@ -127,41 +128,54 @@ function displayLetter() {
           hiddenWord.splice(j, 1, myletter)
           FindWord.innerHTML = (hiddenWord.join(" "));
           good++;
-          updateWin()
-          button.remove()
           finded = true;
-          console.log(good);
+          button.remove();
+          updateWin();
         }
       }
-
-      if (finded != true) {
+      if (finded !== true) {
         console.log("error")
-        error++
-        updateError()
-
+        finded=false;
+        error++;
+        //button.remove();
+        updateError();
+        
       }
-
-
     });
   });
 };
 
+// for(var error=0; error < maxError; error++){
+//   if(finded !=)
+// }
 
+
+
+var rejouer = document.getElementById("rejouer")
 function updateError(){
   document.getElementById('loss').innerHTML=error;
-  if(error > maxError){
+  if(maxError === error){
     document.getElementById('loss').innerHTML="You loose";
+   
+    var buttonReset = document.createElement('button');
+    buttonReset.setAttribute('onClick',"window.location.reload();")
+    buttonReset.innerHTML="Game over, try again ?"
+    rejouer.appendChild(buttonReset);
   }
 }
 function updateWin(){
   document.getElementById('win').innerHTML=good;
   if(good === randomWord.length){
     document.getElementById('win').innerHTML="You win";
-   document.reset()
+   // <button onClick="window.location.reload();">Refresh Page</button>
+    var buttonReset = document.createElement('button');
+    buttonReset.setAttribute('onClick',"window.location.reload();")
+    buttonReset.innerHTML="Rejouer ?"
+    rejouer.appendChild(buttonReset);
   }
-}
+}updateError();
 updateWin()
-updateError();
+
 displayLetter();
 
 
