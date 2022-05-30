@@ -5,7 +5,6 @@ body {
 
 .container {
   max-width: 0 auto;
-  border: 1px solid green;
   position: relative;
 }
 
@@ -48,7 +47,7 @@ h1, h2 {
   width: auto;
 }
 
-#find-word {
+#find-word, .hiddenword {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,9 +58,5 @@ h1, h2 {
   font-weight: 900;
   color: blue;
   letter-spacing: 10px;
-}
-
-.hiddenword {
-  color: red;
 }
 /*# sourceMappingURL=style.css.map */

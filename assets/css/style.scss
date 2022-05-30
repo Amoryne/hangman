@@ -6,7 +6,7 @@ body{
 }
 .container{
 	max-width:0 auto;
-    border:1px solid green;
+    
     position: relative;
 }
 //TITRE
@@ -37,7 +37,7 @@ h1, h2{
 			width: auto;
 }}}
 
-#find-word{
+#find-word , .hiddenword{
 	display: flex;
 	justify-content: center;
 	gap:20px;
@@ -47,7 +47,7 @@ h1, h2{
 
 }
 
-.hiddenword{
+// .hiddenword{
 		
-		color:red;
-	}
+// 		color:red;
+// 	}
