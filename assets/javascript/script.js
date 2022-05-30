@@ -64,8 +64,9 @@ let arrayWord=randomWord.split("");
 let indiceDOM=document.getElementById("indice");
 let lives=document.getElementById("lives");
 let details=document.getElementById("explication")
+var rejouer = document.getElementById("rejouer")
 
-
+//-----------------------------------------------------------------------------
 
 //REGLES DU JEU
 
@@ -75,17 +76,12 @@ lives.innerHTML=" Vous avez pour cette manche: " +maxError + " vies";
 var good=0;
 var error=maxError;
 console.log(maxError)
-// function getRandomLives(){
-//   let maxErrorRandom=
-
-// }
 console.log(arrayWord)
 //---------------------------------------------------------------------------//
 
-
-
 //AFFICHER INDICE LIE AU MOT
 //afficher valeur où indice dont la position est égale a l'index de randomword//
+
 let indexWord= words.indexOf(randomWord);
 let indexIndice=indexWord;
 let indicePos=indice.at(indexWord)
@@ -93,18 +89,13 @@ indiceDOM.innerHTML=indicePos;
 console.log(indicePos)
 
 
+//AFFICHER LE MOT CACHER "_"--------------------------------------------------
 
-
-
-
-
-
-//AFFICHER LE MOT CACHER "_"-------------------
 let FindWord=document.getElementById("find-word");
 let hiddenWord = [];
 for(let i = 0; i < randomWord.length; i++){
   hiddenWord[i]= '_';
-
+//CREER SPAN POUR LES "_" DANS LE DOM
 let p= document.createElement('span');
   p.setAttribute('class','hiddenword');
   p.innerHTML = hiddenWord[i];
@@ -115,7 +106,7 @@ let p= document.createElement('span');
 //--------------------------------------------
 
 
-//AFFICHER ALPHABET CLIQUABLE-------------------------
+//AFFICHER ALPHABET CLIQUABLE---------------------------------------------
 let alphabet = ['a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n',
 'o','p','q','r','s','t','u','v','w','x','y','z'];
 let list = document.getElementById("myList");
@@ -131,7 +122,7 @@ alphabet.forEach((letter) => {
   list.appendChild(btn);
 });
 
-// ------------------------------------//
+// -----------------------------------------------------------------//
 
 
 //AFFICHER LETTRE CHOISIE----------------------------
@@ -170,12 +161,8 @@ finded=false;
   });
 };
 
-// for(var error=0; error < maxError; error++){
-//   if(finded !=)
-// }
 
 
-var rejouer = document.getElementById("rejouer")
 //FUNCTION UPDATE ERROR
 
 function updateError(){
@@ -215,10 +202,10 @@ function win(){
 
     document.getElementById('win').innerHTML="You win";
   
-    var buttonReset = document.createElement('button');
-    buttonReset.setAttribute('onClick',"window.location.reload();")
-    buttonReset.innerHTML="Rejouer ?"
-    rejouer.appendChild(buttonReset);
+    // var buttonReset = document.createElement('button');
+    // buttonReset.setAttribute('onClick',"window.location.reload();")
+    // buttonReset.innerHTML="Rejouer ?"
+    // rejouer.appendChild(buttonReset);
     staySmart();
 
   }
