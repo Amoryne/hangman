@@ -52,7 +52,7 @@ console.log(arrayWord)
 
 var error=0;
 
-var maxError = 5;
+const maxError = 5;
 let good=0;
 
 //---------------------------------------------------------------------------//
@@ -119,7 +119,7 @@ function displayLetter() {
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
-
+finded=false;
       var myletter = (button.textContent);
 
       for (var j = 0; j < randomWord.length; j++) {
@@ -136,8 +136,11 @@ function displayLetter() {
       if (finded !== true) {
         console.log("error")
         finded=false;
+        
+        
         error++;
         //button.remove();
+        
         updateError();
         
       }
@@ -148,7 +151,6 @@ function displayLetter() {
 // for(var error=0; error < maxError; error++){
 //   if(finded !=)
 // }
-
 
 
 var rejouer = document.getElementById("rejouer")
@@ -173,9 +175,16 @@ function updateWin(){
     buttonReset.innerHTML="Rejouer ?"
     rejouer.appendChild(buttonReset);
   }
-}updateError();
-updateWin()
+}
 
+function reset(){
+  error=0;
+}
+
+
+reset()
+updateError();
+updateWin()
 displayLetter();
 
 
