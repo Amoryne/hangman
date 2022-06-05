@@ -31,6 +31,7 @@ const indice = [
   "Paysage norvégien",
   "Endroit où nager et bronzer",
   "Meilleure boisson énergisante",
+  "Quel est ce jeu? <a href='#''><img src='./assets/img/pokemon.jpg'/></a>"
 ];
 const words = [
   "kaamelott",
@@ -43,6 +44,7 @@ const words = [
   "montain",
   "beach",
   "redbull",
+  "pokemon",
 ];
 const explication = [
   "Série créer par AA",
@@ -55,11 +57,15 @@ const explication = [
   "Une européene super chère",
   "c'est la plage quoi",
   "Bien meilleure que le Monster",
+  'Jeu vidéos Nitendo'
 ];
 
 //MOT ET INDICE RANDOM
 
-let randomWord=words[Math.floor(Math.random()*words.length)];
+  randomWord=words[Math.floor(Math.random()*words.length)];
+
+
+var keep=document.getElementById("victory")
 let arrayWord=randomWord.split("");
 let indiceDOM=document.getElementById("indice");
 let lives=document.getElementById("lives");
@@ -75,6 +81,8 @@ var maxError = Math.floor(Math.random()*(10 - 2)) + 2;
 lives.innerHTML=" Vous avez pour cette manche: " +maxError + " vies";
 var good=0;
 var error=maxError;
+var keepWin=0
+keep.innerHTML=keepWin;
 console.log(maxError)
 console.log(arrayWord)
 //---------------------------------------------------------------------------//
@@ -85,31 +93,34 @@ console.log(arrayWord)
 let indexWord= words.indexOf(randomWord);
 let indexIndice=indexWord;
 let indicePos=indice.at(indexWord)
-indiceDOM.innerHTML=indicePos;
+indiceDOM.innerHTML="Question/indice: "+ indicePos;
 console.log(indicePos)
 
 
 //AFFICHER LE MOT CACHER "_"--------------------------------------------------
 
+
 let FindWord=document.getElementById("find-word");
 let hiddenWord = [];
 for(let i = 0; i < randomWord.length; i++){
+
   hiddenWord[i]= '_';
 //CREER SPAN POUR LES "_" DANS LE DOM
-let p= document.createElement('span');
+  let p= document.createElement('span');
   p.setAttribute('class','hiddenword');
   p.innerHTML = hiddenWord[i];
   FindWord.appendChild(p);
-
+  
 }
 
 //--------------------------------------------
 
 
 //AFFICHER ALPHABET CLIQUABLE---------------------------------------------
-let alphabet = ['a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n',
+
+var alphabet = ['a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n',
 'o','p','q','r','s','t','u','v','w','x','y','z'];
-let list = document.getElementById("myList");
+var list = document.getElementById("myList");
 
 alphabet.forEach((letter) => {
   // let li = document.createElement("li");
@@ -121,6 +132,7 @@ alphabet.forEach((letter) => {
   btn.innerText = letter;
   list.appendChild(btn);
 });
+
 
 // -----------------------------------------------------------------//
 
@@ -155,6 +167,7 @@ finded=false;
         error--;
         //button.remove();
         updateError();
+        button.remove();
         
       }
     });
@@ -172,8 +185,9 @@ function updateError(){
 }
 //FUNCTION UPDATE WIN
 function updateWin(){
-  document.getElementById('win').innerHTML=good;
+  document.getElementById('win').innerHTML="Vous avez " +good + " lettres";
   win();
+  
   
 }
 
@@ -193,12 +207,21 @@ function gameOver(){
     staySmart();
     resetError();
     
+
+    
+}
+    
     
   }
-}
+
 
 function win(){
+
   if(good === randomWord.length){
+
+    // keepWin++
+    // keep.innerHTML=keepWin;
+    //youWin=false;
 
     document.getElementById('win').innerHTML="You win";
   
@@ -207,6 +230,8 @@ function win(){
     // buttonReset.innerHTML="Rejouer ?"
     // rejouer.appendChild(buttonReset);
     staySmart();
+    list.remove();
+   
 
   }
 }
@@ -222,23 +247,83 @@ function resetError(){
 function staySmart(){
 let indexDetails=indexWord;
 let indexDetailsPos=explication.at(indexWord)
-details.innerHTML=indexDetailsPos;
+details.innerHTML="L'explication est: " +indexDetailsPos;
 console.log(indexDetailsPos)
 }
 
-// function init(){
-//   //init error
-//   error=maxError;
-// //init vies
-//   good=0;
-//   lives;
-//   indicePos;
+// function resetGame(){
+// error=maxError
+// good=0;
+// hiddenWord=[]
+// getRandomWord();
+// getClavier()
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// if(youWin === true){
+  
+//       keepWin++
+//       keep.innerHTML=keepWin;
+//       var session = localStorage.setItem('loose', keepWin);
+//       localStorage.clear()
+//   }
+  
+  
+// console.log(session)
+
+
+
+
+
+
+
+
+
+// restart=false;
+// 
+
+// function buttonRestart(){
+//   restart=true;
+// resetError();
+// FindWord.remove()
 // }
+// buttonRestart()
+// if(restart === true){
+  
+//   function newGame(){
+    
+//     FindWord.innerHTML=randomWord
+//     console.log("bouyaka")
+    
+  
+//   } 
+//   newGame()
+// } 
+// })
+
+
+
 
 
 
