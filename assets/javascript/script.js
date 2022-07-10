@@ -202,12 +202,10 @@ gameOver();
 win();
 displayLetter();
 
-// function resetGame(){
-// error=maxError
-// good=0;
-// hiddenWord=[]
-// getRandomWord();
-// getClavier()
+let myscroll=document.getElementById('myscroll');
+myscroll.addEventListener("click",()=>{
+    window.scrollTo(0,740)
+})
 
 ///////////////////////////////////////////////////////////
 
