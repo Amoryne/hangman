@@ -6,7 +6,7 @@ body{
 .main-content{
     margin:0 auto;
     max-width: 400px; 
-    max-height: 896px;
+    
     border-radius:10px;
     padding:10px;
     background-color: #53bcbd;
@@ -22,12 +22,7 @@ body{
 .container-clavier{
     display: flex;
     flex-wrap: wrap;
-    
     justify-content: center;
-    border:1px solid red;
-    
-    
-    
     flex-shrink: 1;
     flex-basis: auto;
     gap:10px;
@@ -129,4 +124,57 @@ body{
     width:300px;
    transform: translateY(-70px);
    
+}
+
+@media screen and(min-width:1024px) {
+    .main-content{
+      max-width:100%;
+      border-radius:0;
+    }
+    .container-clavier{
+       padding:50px;
+        .alphaBtn{
+            padding:10px;
+            font-size: 30px;
+            background-color:#53bcbd;
+            transform: translateY(-40px);
+        }
+    }
+    .title{
+        font-size: 100px;
+        margin-bottom: 200px;
+    }
+    .container-indice{
+        padding: 5px;
+        transform: translateY(-150px);
+        
+    }
+    .console{
+      margin-top: 100px;
+    }
+    .container-head{
+        justify-content: space-between;
+        .button-reload{
+            width:80px;
+            height:80px;
+            margin-right: 60px;
+        }
+        width:100%;
+        .container-img-header{
+            width:300px;
+            height: 100px;
+            #loss{
+                font-size: 30px; 
+            }
+           
+        }
+        
+    }
+    #find-word{
+        transform: translateY(-80px);
+        font-size:50px;
+    }
+}
+html{
+    scroll-behavior: smooth;
 }

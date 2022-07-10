@@ -6,7 +6,6 @@ body {
 .main-content {
   margin: 0 auto;
   max-width: 400px;
-  max-height: 896px;
   border-radius: 10px;
   padding: 10px;
   background-color: #53bcbd;
@@ -38,7 +37,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid red;
   -ms-flex-negative: 1;
       flex-shrink: 1;
   -ms-flex-preferred-size: auto;
@@ -163,5 +161,61 @@ body {
   width: 300px;
   -webkit-transform: translateY(-70px);
           transform: translateY(-70px);
+}
+
+@media screen and (min-width: 1024px) {
+  .main-content {
+    max-width: 100%;
+    border-radius: 0;
+  }
+  .container-clavier {
+    padding: 50px;
+  }
+  .container-clavier .alphaBtn {
+    padding: 10px;
+    font-size: 30px;
+    background-color: #53bcbd;
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  .title {
+    font-size: 100px;
+    margin-bottom: 200px;
+  }
+  .container-indice {
+    padding: 5px;
+    -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+  }
+  .console {
+    margin-top: 100px;
+  }
+  .container-head {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+  .container-head .button-reload {
+    width: 80px;
+    height: 80px;
+    margin-right: 60px;
+  }
+  .container-head .container-img-header {
+    width: 300px;
+    height: 100px;
+  }
+  .container-head .container-img-header #loss {
+    font-size: 30px;
+  }
+  #find-word {
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
+    font-size: 50px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 /*# sourceMappingURL=style.css.map */
